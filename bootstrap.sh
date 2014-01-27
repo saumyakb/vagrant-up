@@ -16,23 +16,17 @@ sudo pip install virtualenv
 sudo pip install virtualenvwrapper
 mkdir ~/virtualenvs
 
-# Node and npm
-sudo apt-get install git-core curl build-essential openssl libssl-dev
-sudo add-apt-repository ppa:chris-lea/node.js
-sudo apt-get update
-sudo apt-get install nodejs
-sudo apt-get install npm
+#http://stackoverflow.com/questions/12626370/virtualenv-shell-errors
+wget http://python-distribute.org/distribute_setup.py
+python distribute_setup.py
 
 #Install cURL and mysql
 apt-get -y install curl
 apt-get -y install mysql-client mysql-server libmysql-ruby libmysqlclient-dev
 
-# Install RVM
-bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
+apt-get -y install openssl libreadline6 libreadline6-dev git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison subversion
 
-#Install Mongo
-apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
-echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list
-apt-get update > /dev/null
-apt-get -y install mongodb-10gen=2.2.3
-
+#Install RVM
+# http://www.circuidipity.com/install-ruby-on-debian-wheezy-using-rvm.html
+# curl -L get.rvm.io | bash -s stable
+# source ~/.rvm/scripts/rvm
